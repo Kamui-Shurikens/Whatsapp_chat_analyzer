@@ -19,6 +19,7 @@ with col2:
     st.text("5. Analyze !!!")
     st.header("Note ->")
     st.text("Before Exporting chat, make sure that\nyour phone follows 24 hour clock format\notherwise change it to 24 hour in phone\nsettings and then upload.")
+    st.text("Also make sure that date is in DD/MM/YY \nformat in your phone, NOT in DD/MM/YYYY")
 st.sidebar.header("By- Sumit Kumar\nAKA\nKamui-Shurikens")
 st.sidebar.write("[Github Repository](https://github.com/Kamui-Shurikens/Whatsapp_chat_analyzer)")
 st.sidebar.text("")
