@@ -14,7 +14,7 @@ with col2:
     st.header("How to use ?")
     st.text("1. Open a chat in whatsapp.")
     st.text("2. Go to Options -> More -> Export chat.")
-    st.text("3. Select Export chat WITHOUR MEDIA.")
+    st.text("3. Select Export chat WITHOUT MEDIA.")
     st.text("4. Upload this file here.")
     st.text("5. Analyze !!!")
     st.header("Note ->")
