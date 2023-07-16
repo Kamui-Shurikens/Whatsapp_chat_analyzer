@@ -49,7 +49,8 @@ def get_wordcloud(selected_user,df):
     df = df[df['user'] != 'This message was deleted']
 
     wc = WordCloud(width = 700,height = 400,background_color='black',min_font_size = 7)
-    wc_image = wc.generate(df['message'].str.cat(sep = ' '))
+    text_content = df['message'].str.cat(sep = ' ')
+    wc_image = wc.generate(text_content)
 
     return wc_image
 
