@@ -132,12 +132,12 @@ if uploaded_file is not None:
 
         # creating wordcloud whether for single user or for a group
 
-        st.title('WORD CLOUD')
-        wc_image = help.get_wordcloud(selected_user,df)
-        fig,ax = plt.subplots()
-        ax.imshow(wc_image)
+        # st.title('WORD CLOUD')
+        # wc_image = help.get_wordcloud(selected_user,df)
+        # fig,ax = plt.subplots()
+        # ax.imshow(wc_image)
 
-        st.pyplot(fig)
+        # st.pyplot(fig)
 
         # Most common 20 words analysis
 
