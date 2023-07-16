@@ -126,7 +126,7 @@ if uploaded_file is not None:
                 st.pyplot(fig)
 
             with col2:
-                percent_data = round((activity/df.shape[0])*100,2).reset_index().rename(columns={'index':'user','user':'percentage'})
+                percent_data = round((activity/df.shape[0])*100,2).reset_index().rename(columns={'index':'user','count':'percentage'})
                 st.dataframe(percent_data)
 
 
