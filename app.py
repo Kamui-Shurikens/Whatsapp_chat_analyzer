@@ -101,11 +101,11 @@ if uploaded_file is not None:
             st.pyplot(fig)
 
         #Heatmap
-        st.title("Average Weekly Heat Map")
-        user_heatmap = help.get_heatmap(selected_user,df)
-        fig,ax = plt.subplots()
-        ax = sns.heatmap(user_heatmap)
-        st.pyplot(fig)
+        # st.title("Average Weekly Heat Map")
+        # user_heatmap = help.get_heatmap(selected_user,df)
+        # fig,ax = plt.subplots()
+        # ax = sns.heatmap(user_heatmap)
+        # st.pyplot(fig)
 
 
 
