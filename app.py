@@ -41,7 +41,7 @@ if uploaded_file is not None:
     userList.sort()
     userList.insert(0,"Overall")
 
-    selected_user = st.sidebar.selectbox("Who you want to analyze ?",userList)
+    selected_user = st.sidebar.selectbox("Who do you want to analyze ?",userList)
     if (st.sidebar.button("ANALYZE !!")):
         col1,col2,col3,col4 = st.columns(4)
         total_msg,words,media,links = help.get_stats(selected_user,df)
