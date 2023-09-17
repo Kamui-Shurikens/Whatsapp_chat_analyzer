@@ -38,22 +38,6 @@ def most_active(df):
     x = df['user'].value_counts()
     return x
 
-def get_wordcloud(selected_user,df):
-
-    if(selected_user != 'Overall'):
-        df = df[df['user'] == selected_user]
-
-    df = df[df['user'] != 'group_notification']
-    df = df[df['message'] != '<Media omitted>\n']
-    df = df[df['message'] != 'This message was deleted']
-    df = df[df['user'] != 'This message was deleted']
-
-    wc = WordCloud(width = 700,height = 400,background_color='black',min_font_size = 7)
-    text_content = df['message'].str.cat(sep = ' ')
-    wc_image = wc.generate(text_content)
-
-    return wc_image
-
 def get_most20(selected_user,df):
 
     if(selected_user != 'Overall'):
@@ -124,12 +108,3 @@ def get_monthly_activity(selected_user,df):
 
     x = df['month'].value_counts()
     return x
-
-def get_heatmap(selected_user,df):
-
-    if selected_user != 'Overall':
-        df = df[df['user'] == selected_user]
-
-    user_heatmap = df.pivot_table(index='day_name', columns='period', values='message', aggfunc='count').fillna(0)
-
-    return user_heatmap
