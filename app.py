@@ -2,7 +2,6 @@ import  streamlit as st
 import  preprocessor
 import help
 import matplotlib.pyplot as plt
-import seaborn as sns
 import time
 
 col1,col2 = st.columns(2);
@@ -31,11 +30,8 @@ uploaded_file = st.sidebar.file_uploader("Enter your secret chats here...")
 if uploaded_file is not None:
     st.snow()
     bytes_data = uploaded_file.getvalue()
-    #here bytes data will contain bytes, we need to convert it into utf-8 string
-    data = bytes_data.decode('utf-8')
-    # st.text(data)  # to print string
 
-    # now we will give this string to preprocessor to get dataframe
+    data = bytes_data.decode('utf-8')
 
     df = preprocessor.preprocess(data);
     st.dataframe(df)
@@ -100,15 +96,6 @@ if uploaded_file is not None:
             plt.xticks(rotation='vertical')
             st.pyplot(fig)
 
-        #Heatmap
-        # st.title("Average Weekly Heat Map")
-        # user_heatmap = help.get_heatmap(selected_user,df)
-        # fig,ax = plt.subplots()
-        # ax = sns.heatmap(user_heatmap)
-        # st.pyplot(fig)
-
-
-
         if(selected_user == 'Overall'):
 
             st.title('Most Active Users')
@@ -129,15 +116,6 @@ if uploaded_file is not None:
                 percent_data = round((activity/df.shape[0])*100,2).reset_index().rename(columns={'index':'user','count':'percentage'})
                 st.dataframe(percent_data)
 
-
-        # creating wordcloud whether for single user or for a group
-
-        # st.title('WORD CLOUD')
-        # wc_image = help.get_wordcloud(selected_user,df)
-        # fig,ax = plt.subplots()
-        # ax.imshow(wc_image)
-
-        # st.pyplot(fig)
 
         # Most common 20 words analysis
 
